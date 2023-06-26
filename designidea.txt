@@ -1,0 +1,241 @@
+CHATGPT
+
+------------------------------------ Shades to use ----------------------------
+
+--> Shade of yellow: #F9A825 (This is a bright and warm yellow that has a slight orange undertone. It can add a touch of energy and cheerfulness to the design.)
+
+--> Shade of yellow: #F7DC6F (This is a pale and warm yellow that can evoke feelings of happiness and optimism. It can be used as a background color to create a light and airy atmosphere.)
+
+--> Shade of yellow: #F1C40F (This is a more saturated yellow that can add a touch of brightness and cheerfulness to the design.)
+
+--> Shade of brown: #8B4513 (This is a warm and rich brown that can evoke feelings of stability and reliability. It can be used as a background color to create a warm and welcoming atmosphere.)
+
+--> Shade of brown: #A1887F (This is a more muted brown that has a gray undertone. It can add a touch of elegance and sophistication to the design.)
+
+
+-------------------------------- Where to use ----------------------
+
+---> #F9A825 could be a good primary color as it is bright and warm, and it can add a touch of energy and cheerfulness to the design. You could use this color for the background of the header or navigation bar, or for the buttons and other interactive elements.
+
+---> #F7DC6F is a good choice for background color as it evokes feelings of happiness and optimism. It can be used as a background color for the main content area.
+
+---> #F1C40F is a more saturated color that can be used as an accent color. It can add a touch of brightness and cheerfulness to the design. You could use this color for highlighting important information or for the buttons and other interactive elements.
+
+---> #8B4513 is a warm and rich brown that can evoke feelings of stability and reliability. This color can be used as a background color for the main content area or for the footer.
+
+---> #A1887F is a more muted brown that has a gray undertone. It can add a touch of elegance and sophistication to the design. You could use this color for text, borders or other subtle design element.
+
+
+--------------------------- Complementary Shades ------------------------------
+
+---> #2C3E50 (This is a dark shade of blue that can add a touch of elegance and sophistication to the design. It could be used for text, borders or other subtle design elements)
+
+---> #34495E (This is a dark shade of gray that can add a sense of calm and balance to the design. It could be used as background color for main content area)
+
+---> #27AE60 (This is a bright shade of green that can evoke feelings of growth and renewal. It could be used as an accent color for buttons or other interactive elements)
+
+---> #16A085 (This is a muted shade of green that can evoke feelings of tranquility and balance. It could be used for text or other subtle design elements)
+
+---> #9B59B6 (This is a muted shade of purple that can evoke feelings of creativity and intuition. It could be used as an accent color for buttons or other interactive elements)
+
+
+---------------------------- Background Color -----------------------------------
+
+
+---> #FFFFFF (This is the hex code for white, which is a classic background color that provides a high contrast against other colors, making text easy to read)
+
+---> #F5F5F5 (This is a light shade of gray, which could be used as a background color to create a softer and more subtle contrast against the primary color)
+
+---> #ECF0F1 (This is a pale shade of gray that can evoke feelings of calm and balance. It could be used as a background color to create a light and airy atmosphere)
+
+---> #000000 (This is the hex code for black, which can be used as a background color to create a bold and dramatic contrast against the primary color)
+
+---> #2C3E50 (This is a dark shade of blue which could be used as background color to create a sense of elegance and sophistication.)
+
+
+/* 
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To-Do List App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <h1>My To-Do List</h1>
+    <form id="todo-form">
+      <input type="text" id="todo-input" placeholder="Add a new task..." />
+      <button type="submit">Add</button>
+    </form>
+    <ul id="todo-list"></ul>
+    <div class="date-time"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+
+
+body {
+  background-color: #fbe8e5; /* warm neutral color*/
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+form {
+  text-align: center;
+}
+
+input {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #f1e7e1; /* warm yellow color */
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #f1e7e1; /* warm yellow color */
+  color: #333333;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #e5d5c5; /* warm brown color */
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  padding: 12px 20px;
+  background-color: #fdf6e3; /* warm yellow color */
+  border-radius: 4px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-time {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 50px;
+  color: #f1e7e1; /* warm yellow color */
+}
+
+
+
+
+
+
+// Get the input field, the to-do list, and the date-time div
+const inputField = document.querySelector("#todo-input");
+const todoList = document.querySelector("#todo-list");
+const dateTimeDiv = document.querySelector(".date-time");
+
+// Add a new task when the form is submitted
+const form = document.querySelector("#todo-form");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  // Get the input value
+  const inputValue = inputField.value;
+
+  // Create a new li element with the input value
+  const newLi = document.createElement("li");
+  newLi.innerHTML = inputValue;
+
+  // Create a new span element with the date and time
+  const dateTime = new Date().toLocaleString();
+  const newSpan = document.createElement("span");
+  newSpan.innerHTML = dateTime;
+
+  // Append the date and time span to the li element
+  newLi.appendChild(newSpan);
+
+  // Append the new li element to the to-do list
+  todoList.appendChild(newLi);
+
+  // Clear the input field
+  inputField.value = "";
+});
+
+// Remove a task when the li element is clicked
+todoList.addEventListener("click", (event) => {
+  if (event.target.tagName === "LI") {
+    event.target.remove();
+  }
+});
+
+// Update the date and time every second
+setInterval(() => {
+  dateTimeDiv.innerHTML = new Date().toLocaleString();
+}, 1000);
+
+*/
+
+
+
+/* TIMER
+
+<div id="timer">
+  <span id="minutes"></span> : <span id="seconds"></span>
+</div>
+<button id="reset-button">Reset</button>
+
+
+
+const minutesSpan = document.querySelector("#minutes");
+const secondsSpan = document.querySelector("#seconds");
+const resetButton = document.querySelector("#reset-button");
+let minutes = 25;  // starting time
+let seconds = 0;
+let intervalId;
+
+function startTimer() {
+    intervalId = setInterval(() => {
+        seconds--;
+        if (seconds < 0) {
+            minutes--;
+            seconds = 59;
+        }
+        if (minutes < 0) {
+            clearInterval(intervalId);
+            return;
+        }
+        minutesSpan.innerHTML = minutes;
+        secondsSpan.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+    }, 1000);
+}
+
+startTimer();
+
+
+
+
+
+resetButton.addEventListener("click", () => {
+    clearInterval(intervalId);
+    minutes = 25;
+    seconds = 0;
+    minutesSpan.innerHTML = minutes;
+    secondsSpan.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+    startTimer();
+});
+
+
+*/

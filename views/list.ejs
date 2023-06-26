@@ -1,0 +1,36 @@
+<%- include("header") -%>
+<h1> To-Do List</h1>
+<p class="title"><%= listTitle %>  </p>
+<p class="date-time"> <%=time%> </p>
+<div class="style">
+  
+</div>
+<form id="todo-form" action="/" method="post">
+  <input
+    type="text"
+    id="todo-input"
+    name="newItem"
+    placeholder="Add a new task..."
+    autocomplete="off"
+  />
+  <button id="add" type="submit" name="list" value="<%= listTitle %> ">Add</button>
+</form>
+
+<div id="todo-list">
+
+  <% newListItems.forEach(items => { %>
+<!-- to add and delete a item -->
+  <form action="/delete" method="post">
+    <div class="todo-items">
+        <input type="checkbox" name="checkbox"/>
+        <p><%= items.item %></p>
+      <button type="submit" name="deleteBtn" class="material-symbols-outlined" style="cursor: pointer;" value="<%=items._id%>"> delete </button>
+    </div>
+    <input type="hidden" name="listName" value="<%= listTitle %> ">
+  </form>
+
+  <% }); %>
+</div>
+
+
+<%- include("footer") -%>
